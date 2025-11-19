@@ -33,7 +33,7 @@ def find_safe_heads(unsafe_file, safe_file, percentile=80, top_k=None):
     if top_k is not None and top_k < len(sorted_heads):
         sorted_heads = sorted_heads[:top_k]
     
-    return sorted_heads, unsafe_data, safe_data  # 返回数据字典以便后续使用
+    return sorted_heads, unsafe_data, safe_data  # Also return full data for reference
 
 # Example usage
 unsafe_file = '../angle/llava-v1.5-7b/vlsafe.json'    # Unsafe dataset

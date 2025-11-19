@@ -1,4 +1,4 @@
-# One Head to Rule Them All: Amplifying LVLM Safety through a Single Critical Attention Head
+# One Head to Rule Them All: Amplifying LVLM Safety through a Single Critical Attention Head(NeurIPS2025 Poster)
 
 This repository contains the implementation of the paper "One Head to Rule Them All: Amplifying LVLM Safety
  through a Single Critical Attention Head" which proposes a novel approach to enhancing the safety of Large Vision-Language Models (LVLMs) by identifying and leveraging critical attention heads that are essential for safety.
@@ -9,11 +9,10 @@ LVLMs have demonstrated impressive capabilities in multimodal understanding task
 
 1. Investigating internal multi-head attention mechanisms
 2. Identifying critical "safety" attention heads
-3. Measuring deflection angles of hidden states to efficiently discriminate between safe and unsafe inputs
+3. Measuring deflection angle of hidden states to efficiently discriminate between safe and unsafe inputs
 4. Implementing a defense mechanism that achieves near-perfect detection of harmful inputs while maintaining low false positive rates
 
 ## Requirements
-
 
 - PyTorch
 - Transformers
@@ -29,12 +28,14 @@ pip install -r requirements.txt
 ## Dataset Preparation
 
 The code works with several datasets:
+
 - VLSafe: Contains harmful image-text pairs
 - LLaVA-Instruct-80K: Used for safe dataset
 - ShareGPT4V: Used for safe dataset testing
 - JailbreakV-28K: Contains various jailbreak attack scenarios
 
 Prepare your datasets in the following directory structure:
+
 ```
 data/
 ├── JailBreakV_28K/
@@ -59,7 +60,6 @@ The repository is organized into several modules:
 - `utils/`: Utility scripts for threshold determination and safe head selection
 
 ## Running Experiments(LLaVA-v1.5-7B)
-
 
 ### 1. Attack Testing
 
@@ -166,9 +166,3 @@ python defense/defense_llava.py \
        --safe_heads [[8,2]] \
        --threshold 2.16
 ```
-
-
-
-
-
-

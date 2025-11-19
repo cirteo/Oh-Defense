@@ -20,7 +20,7 @@ def compute_consine_similarity(u1, u2):
     else:
         u1_normalized = normalize_columns(u1)
         u2_normalized = normalize_columns(u2)
-        S = torch.matmul(u1_normalized[:, 9:10].T, u2_normalized[:, 9:10])
+        S = torch.matmul(u1_normalized[:, :1].T, u2_normalized[:, :1])
     
     principal_angles = torch.acos(torch.clamp(S, -1, 1))
     principal_angles_degrees = principal_angles * 180 / torch.pi
